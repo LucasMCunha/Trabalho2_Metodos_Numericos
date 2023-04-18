@@ -21,7 +21,7 @@ def gauss(A):
             #skipper
          return 0
 
-def reader(A):
+def reader():
     size = 0
     entrance = []
     created = False
@@ -37,10 +37,9 @@ def reader(A):
                 created = True
                 for i in len(entrace):
                     matrix [i][size] = entrance[i]
-            else:
-                #Mapear letras a linhas e colunas e colocar 
-                #Cada um no lugar certo
-                return 0
+        a = ord(data[4]) - 65
+        b = ord(data[0]) - 65
+        matrix[a][b] = data[2]
     return matrix
                 
 
@@ -57,19 +56,19 @@ def swap(A, i, j):
 
 def multVector(v, x):
     newV = []
-    for i in xrange(len(v)):
+    for i in range(len(v)):
         newV += [v[i] * x]
     return newV
 
 def sumVector(v1, v2):
     newV = []
-    for i in xrange(len(v1)):
+    for i in range(len(v1)):
         newV += [v1[i] + v2[i]]
     return newV
 
 def main():
     i =0
-    A = [i][i+1]
+    A = reader()
     #Recebe entrada em string
     #Transforma ela em matriz
     #Aplica Gauss na matriz
