@@ -1,25 +1,27 @@
-
-def leitor():
-    #Recebe string inicial
-    #Devolve Matriz correspondente
-    return 0
-
-def skipper():
-    if(A[i][j] == 0):
-        skipper+1 
-        if(skipper == 0 & guard == false):
-            guard = true
-            if(skipper != 0):
-                return 0
+# def skipper():
+#     if(A[i][j] == 0):
+#         skipper+1 
+#         if(skipper == 0 & guard == false):
+#             guard = true
+#             if(skipper != 0):
+#                 return 0
 
 
 def gauss(A):
-    guard = false
-    for i in range (len(A) -1):
-        skipper = 0
-        for j in range (i):
-            #skipper
-         return 0
+    for i in range(len(A) - 1):
+       for j in range(i + 1,len(A)):
+           aux1 = A[j][i]
+           if aux1 == 0:
+               for k in range(i,len(A)):
+                   if A[k][i] != 0:
+                       swap(A, i, k)
+                       aux1 = A[j][i]
+           aux2 = A[i][i]
+           if aux2 == 0:
+               continue
+           div = aux1 / aux2
+           A[j] = sumVector(multVector(A[i], -div), A[j])
+    return A
 
 def reader():
     size = 0
@@ -69,10 +71,6 @@ def sumVector(v1, v2):
 def main():
     i =0
     A = reader()
-    #Recebe entrada em string
-    #Transforma ela em matriz
-    #Aplica Gauss na matriz
-    #Gauss devolve X,Y e Z
     print(A)
     return 0
 
