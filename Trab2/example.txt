@@ -1,5 +1,5 @@
-A = 1
-B = 2
+Entrada A = 1
+Entrada B = 2
 A -> 0.4 -> A
 A -> 0.2 -> B
 B -> 0.1 -> A
