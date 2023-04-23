@@ -14,11 +14,27 @@ def gauss(A):
            A[j] = sumVector(multVector(A[i], -div), A[j])
     return A
 
+def gaussSolver(A):
+    size = len(A)
+    aux = 0
+    x =[]
+    for i in range(size):
+        x.append(1)
+    for i in range(1,size+1):
+      a = 0
+      for j in range(size):
+        if (j>(size-i)):
+         aux = aux+1
+         a = a + (x[j] * A[size-i][j])
+      x[size-i] = (A[size-i][size] - a)/A[size-i][size-i]
+    print(aux)
+    return x
+
 def reader():
     size = 0
     entrance = []
     created = False
-    with open('example.txt') as f:
+    with open('casoa.txt') as f:
        for line in f.readlines():
         data = line.split(" ")
         if(data[0] == "Entrada"):
@@ -31,7 +47,6 @@ def reader():
                 for i in range(size):
                     matrix [i][size] = entrance[i] * -1
             if(data[0] != "Entrada"):
-                print(data[0])
                 a1 = data[4].rstrip('\n')
                 b = ord(a1) - 65
                 a = ord(data[0]) - 65
@@ -66,11 +81,10 @@ def sumVector(v1, v2):
     return newV
 
 if __name__ == "__main__":
-    i =0
-    print("La vem a matriz!")
     A = reader()
     gauss(A)
-    print(A)
+    print(gaussSolver(A))
+#    print(A)
 
 #    if __name__ == "__main__":
 #     main()
